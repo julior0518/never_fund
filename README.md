@@ -53,13 +53,14 @@ As a prove of concept we will need:
 - Smart Contract to execute group buys with group funds
 
 ### ***To Do***
--[] ERD: Entity relationship diagram
+-[X] ERD: Entity relationship diagram
 -[] Component hierachy diagram
 -[] Trello board
 -[] Heroku Deployment
 
-
+> [lucidChart](https://lucid.app/lucidchart/6e87e0f8-bd51-4e9e-8c0b-101eba8143fb/edit?beaconFlowId=37A85357346BAFF3&invitationId=inv_f93fa208-94bf-4a19-b498-da2619a2d960&page=0_0#)
 
 #### screenshots of your final product (no more than 2-3) future updates/ credits
+
 
 
