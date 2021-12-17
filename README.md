@@ -16,6 +16,7 @@
 > url will be here
 
 ***
+ls
 
 ### ***Technology Used***
 * ReactJS
@@ -54,7 +55,7 @@ As a prove of concept we will need:
 
 ### ***To Do***
 -[X] ERD: Entity relationship diagram
--[] Component hierachy diagram
+-[X] Component hierachy diagram
 -[] Trello board
 -[] Heroku Deployment
 
