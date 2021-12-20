@@ -12,8 +12,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-// app.use() middleware here ^ ///////////////////
-
 app.use('/shazam', routes);
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

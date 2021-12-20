@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-let MONGODB_URI =
-  'mongodb://127.0.0.1:27017/aquiVaElNombredelosTaquitosDatabase';
+let MONGODB_URI = 'mongodb://127.0.0.1:27017/numverFundDatabase';
 
 mongoose
   .connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
