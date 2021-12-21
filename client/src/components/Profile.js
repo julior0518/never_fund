@@ -1,7 +1,7 @@
 function Profile() {
   return (
     <div className="Profile">
-      <p>profile</p>
+      <p>Profile</p>
     </div>
   );
 }

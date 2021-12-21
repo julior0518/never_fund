@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Landing from './components/Landing';
@@ -12,9 +12,11 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Landing />
-      <Profile />
-      <Taco />
+      <Switch>
+        <Route exact path="/" render={Landing} />
+        <Route exact path="/profile" render={Profile} />
+        <Route exact path="/taco" render={Taco} />
+      </Switch>
       <Foot />
     </div>
   );
