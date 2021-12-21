@@ -3,17 +3,30 @@
   padding: 2px;
   background-color: red
   ;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 60px, 4fr, 1fr;
 }
 
 .Nav {
   padding: 20px;
   margin-bottom: 20px;
   background-color: blue;
+
+  grid-column: 1 / span 3;
+  display: flex;
+  justify-content: right
 }
 
 .li {
   text-decoration: none;
   padding: 5px;
+  color: black;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .li:hover {
   background-color: yellow;
@@ -21,27 +34,42 @@
 
 .LogInOut {
   padding: 20px;
+  background-color: blue;
   background-color: lightblue;
+}
+.LogInOut:hover{
+  background-color: yellow;
+  cursor: pointer;
 }
 
 .Landing {
   padding: 20px;
   background-color:lightseagreen;
+
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .Profile {
   padding: 20px;
-  background-color:blueviolet
+  background-color:blueviolet;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .Taco {
   padding: 20px;
-  background-color: pink
+  background-color: pink;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .Foot {
   padding: 20px;
   margin-top: 20px;
   background-color:grey;
+
+  grid-column: 1 / span 3;
+  display: flex;
 }
 
