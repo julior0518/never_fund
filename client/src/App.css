@@ -11,6 +11,14 @@
   background-color: blue;
 }
 
+.li {
+  text-decoration: none;
+  padding: 5px;
+}
+.li:hover {
+  background-color: yellow;
+}
+
 .LogInOut {
   padding: 20px;
   background-color: lightblue;
