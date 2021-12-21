@@ -1,3 +1,39 @@
-h1 {
-  color: black;
+.App{
+  /* remember to delete padding if you want edge to edge  */
+  padding: 2px;
+  background-color: red
+  ;
 }
+
+.Nav {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: blue;
+}
+
+.LogInOut {
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.Landing {
+  padding: 20px;
+  background-color:lightseagreen;
+}
+
+.Profile {
+  padding: 20px;
+  background-color:blueviolet
+}
+
+.Taco {
+  padding: 20px;
+  background-color: pink
+}
+
+.Foot {
+  padding: 20px;
+  margin-top: 20px;
+  background-color:grey;
+}
+
