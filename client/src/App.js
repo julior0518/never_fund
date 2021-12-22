@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import Profile from './components/Profile';
 import Taco from './components/Taco';
 import Foot from './components/Foot';
+import UserForm from './components/UserForm';
 import './App.css';
 
 import { useState } from 'react';
@@ -13,9 +14,11 @@ import { useState } from 'react';
 function App() {
   const [userStatus, setUserStatus] = useState({
     loginStatus: false,
+    userForm: false,
     userID: ''
   });
 
+  console.log(userStatus.form);
   return (
     <div className="App">
       <Nav userStatus={userStatus} setUserStatus={setUserStatus} />
@@ -25,6 +28,9 @@ function App() {
         <Route exact path="/taco" render={Taco} />
       </Switch>
       <Foot />
+      {!userStatus.userForm ? null : (
+        <UserForm userStatus={userStatus} setUserStatus={setUserStatus} />
+      )}
     </div>
   );
 }

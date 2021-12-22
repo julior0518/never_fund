@@ -10,17 +10,23 @@
 
 .Nav {
   padding: 20px;
-  margin-bottom: 20px;
   background-color: blue;
 
   grid-column: 1 / span 3;
+  grid-row: 1;
   display: flex;
   justify-content: right
 }
 
+
+.liDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .li {
   text-decoration: none;
-  padding: 5px;
+  padding: 20px;
   color: black;
 
 
@@ -34,11 +40,8 @@
 
 .LogInOut {
   padding: 20px;
-  background-color: blue;
-  background-color: lightblue;
 }
 .LogInOut:hover{
-  background-color: yellow;
   cursor: pointer;
 }
 
@@ -70,6 +73,24 @@
   background-color:grey;
 
   grid-column: 1 / span 3;
+  grid-row: 3;
   display: flex;
 }
 
+.userForm {
+  grid-column: 1/ span 3;
+  grid-row: 1/ span 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayForm{
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+.displayFormInput{
+  margin-bottom: 20px;
+}

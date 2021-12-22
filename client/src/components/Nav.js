@@ -2,18 +2,34 @@ import LogInOut from './LogInOut';
 import { Link } from 'react-router-dom';
 
 function Nav(props) {
-  return (
-    <div className="Nav">
-      <p>Nav</p>
+  console.log(props.userStatus);
+  let navElements;
+  if (!props.userStatus.loginStatus) {
+    navElements = (
       <Link to="/" className="li">
         Home
       </Link>
-      <Link to="/profile" className="li">
-        Profile
-      </Link>
-      <Link to="/taco" className="li">
-        Taco
-      </Link>
+    );
+  } else {
+    navElements = (
+      <div className="liDiv">
+        <Link to="/" className="li">
+          Home
+        </Link>
+        <Link to="/profile" className="li">
+          Profile
+        </Link>
+        <Link to="/taco" className="li">
+          Taco
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="Nav">
+      <p>Nav</p>
+      {navElements}
       <LogInOut props={props} />
     </div>
   );
