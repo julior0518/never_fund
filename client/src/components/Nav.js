@@ -1,12 +1,12 @@
 import LogInOut from './LogInOut';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+function Nav(props) {
   return (
     <div className="Nav">
       <p>Nav</p>
       <Link to="/" className="li">
-        Landing
+        Home
       </Link>
       <Link to="/profile" className="li">
         Profile
@@ -14,7 +14,7 @@ function Nav() {
       <Link to="/taco" className="li">
         Taco
       </Link>
-      <LogInOut />
+      <LogInOut props={props} />
     </div>
   );
 }

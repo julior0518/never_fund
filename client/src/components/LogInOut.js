@@ -1,7 +1,17 @@
-function LogInOut() {
+function LogInOut(props) {
+  const set = () => {
+    props.props.setUserStatus({ ...props.props.userStatus, loginStatus: true });
+  };
+
+  console.log(props.props.userStatus);
+
   return (
     <div className="LogInOut">
-      <p>LogInOut</p>
+      {props.props.userStatus.loginStatus ? (
+        <button>logOut</button>
+      ) : (
+        <button onClick={set}>logIn</button>
+      )}
     </div>
   );
 }

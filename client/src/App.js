@@ -8,10 +8,17 @@ import Taco from './components/Taco';
 import Foot from './components/Foot';
 import './App.css';
 
+import { useState } from 'react';
+
 function App() {
+  const [userStatus, setUserStatus] = useState({
+    loginStatus: false,
+    userID: ''
+  });
+
   return (
     <div className="App">
-      <Nav />
+      <Nav userStatus={userStatus} setUserStatus={setUserStatus} />
       <Switch>
         <Route exact path="/" render={Landing} />
         <Route exact path="/profile" render={Profile} />
