@@ -19,6 +19,8 @@ router.get('/users/:id', controllers.getUserById);
 router.get('/tickets/:id', controllers.getTicketById);
 router.get('/Votes/:id', controllers.getVoteById);
 
+router.get('/user/:nameUser', controllers.getUserByUsername);
+
 router.put('/tacos/:id', controllers.updateTaco);
 router.put('/users/:id', controllers.updateUser);
 router.put('/tickets/:id', controllers.updateTicket);

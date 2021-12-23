@@ -128,6 +128,19 @@ const getVoteById = async (req, res) => {
   }
 };
 
+const getUserByUsername = async (req, res) => {
+  try {
+    const { nameUser } = req.params;
+    const esteUsername = await User.find({ nameUser: nameUser });
+    if (esteUsername) {
+      return res.status(200).json({ esteUsername });
+    }
+    return res.status(404).send('This Username does not exist');
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
 //////////////////get data
 const updateTaco = async (req, res) => {
   try {
@@ -265,5 +278,6 @@ module.exports = {
   deleteTaco,
   deleteUser,
   deleteVote,
-  deleteTicket
+  deleteTicket,
+  getUserByUsername
 };
