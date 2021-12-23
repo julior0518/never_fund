@@ -13,29 +13,30 @@ function UserForm(props) {
     password: "",
     passwordConfirm: ""
   })
-  function handleChange (e){
-    setUser({...user, [e.target.id]: e.target.value})
-
-  }
-
-  function login(){}
-
-
   useEffect(()=>{async function userCheck () {
     const res = await axios.get(`${BASE_URL}/user/${user.nameUser}`)
     setFormType({...formType, userCheck:res.data.esteUsername[0].nameUser})
   }
   userCheck()
 },[user])
-  
-  console.log(formType)
 
-  function signup(){
+  function handleChange (e){
+    setUser({...user, [e.target.id]: e.target.value})
+  }
+
+
+  function login(){}
+
+
+
+  async function signup(){
     if (formType.userCheck === user.nameUser){
       console.log(`this user exists`)
+      alert("This usernam is taken, please choose a new username")
     } else {
-    axios.post(`${BASE_URL}/users`, user)
-    console.log(`created`)}
+    const res = await axios.post(`${BASE_URL}/users`, user)
+    props.setUserStatus({...props.userStatus , userForm:false, loginStatus:true, userID:res.data.esteUser._id})
+  }
   }
 
   let displayForm

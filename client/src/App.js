@@ -18,7 +18,7 @@ function App() {
     userID: ''
   });
 
-  console.log(userStatus.userForm);
+  console.log(userStatus);
   return (
     <div className="App">
       <Nav userStatus={userStatus} setUserStatus={setUserStatus} />
