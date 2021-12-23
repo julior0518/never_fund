@@ -2,7 +2,6 @@ import LogInOut from './LogInOut';
 import { Link } from 'react-router-dom';
 
 function Nav(props) {
-  console.log(props.userStatus);
   let navElements;
   if (!props.userStatus.loginStatus) {
     navElements = (

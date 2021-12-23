@@ -94,3 +94,10 @@
 .displayFormInput{
   margin-bottom: 20px;
 }
+.toSignUp{
+  font-size: 10px;
+}
+.toSignUp:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

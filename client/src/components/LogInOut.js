@@ -13,8 +13,6 @@ function LogInOut(props) {
     });
   };
 
-  console.log(props.props.userStatus);
-
   return (
     <div className="LogInOut">
       {props.props.userStatus.loginStatus ? (
