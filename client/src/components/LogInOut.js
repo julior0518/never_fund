@@ -9,7 +9,8 @@ function LogInOut(props) {
     props.props.setUserStatus({
       ...props.props.userStatus,
       loginStatus: false,
-      userForm: false
+      userForm: false,
+      userID: ''
     });
   };
 

@@ -33,9 +33,11 @@ function UserForm(props) {
     if (formType.userCheck === user.nameUser){
       console.log(`this user exists`)
       alert("This usernam is taken, please choose a new username")
-    } else {
+    } else if ((user.password !== "") && (user.password === user.passwordConfirm)){
     const res = await axios.post(`${BASE_URL}/users`, user)
     props.setUserStatus({...props.userStatus , userForm:false, loginStatus:true, userID:res.data.esteUser._id})
+  } else {
+    alert("Please check the passwords")
   }
   }
 
@@ -45,7 +47,7 @@ function UserForm(props) {
     <div className="displayForm">
       <h2>Log In</h2>
       <input onChange={handleChange}  placeholder="username" id="nameUser" type="text" className="displayFormInput"></input>
-      <input onChange={handleChange} placeholder="password" id="password" type="text" className="displayFormInput"></input>
+      <input onChange={handleChange} placeholder="password" id="password" type="password" className="displayFormInput"></input>
       <button onClick={login}>submit</button>
       <p className="toSignUp" onClick={()=>{setFormType({...formType, type:"signup"})}}>Don't have an account? Sign up</p>
     </div>
@@ -54,8 +56,8 @@ function UserForm(props) {
     <div className="displayForm">
       <h2>Create an account</h2>
       <input onChange={handleChange} placeholder="username" id="nameUser" type="text" className="displayFormInput"></input>
-      <input onChange={handleChange} placeholder="password" id="password" type="text" className="displayFormInput"></input>
-      <input onChange={handleChange} placeholder="passwordConfirm" id="passwordConfirm" type="text" className="displayFormInput"></input>
+      <input onChange={handleChange} placeholder="password" id="password" type="password" className="displayFormInput"></input>
+      <input onChange={handleChange} placeholder="passwordConfirm" id="passwordConfirm" type="password" className="displayFormInput"></input>
       <button onClick={signup}>submit</button>
       <p className="toSignUp" onClick={()=>{setFormType({...formType, type:"login"})}}>Already have an account? Log in</p>
     </div>
