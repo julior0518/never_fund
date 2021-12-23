@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { BASE_URL } from "../Globals";
 
 function UserForm(props) {
-  const form = useRef()
   const [formType, setFormType] = useState({
     type: "login",
     userCheck: "",
@@ -20,6 +19,8 @@ function UserForm(props) {
   }
   userCheck()
 },[user])
+const form = useRef()
+
 
   function handleChange (e){
     setUser({...user, [e.target.id]: e.target.value})

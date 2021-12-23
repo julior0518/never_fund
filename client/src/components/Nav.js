@@ -27,7 +27,6 @@ function Nav(props) {
 
   return (
     <div className="Nav">
-      <p>Nav</p>
       {navElements}
       <LogInOut props={props} />
     </div>

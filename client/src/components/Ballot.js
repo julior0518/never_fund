@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Ballot() {
   return (
@@ -13,18 +13,21 @@ function Ballot() {
           id="title"
           type="text"
           className="displayFormInput"
+          onChange={console.log(1)}
         ></input>
         <input
           placeholder="Contract Address"
           id="contract"
           type="text"
           className="displayFormInput"
+          onChange={console.log(2)}
         ></input>
         <input
           placeholder="Description"
           id="description"
           type="text"
           className="displayFormInputD"
+          onChange={console.log(3)}
         ></input>
         <button>Create Ballot</button>
       </form>
