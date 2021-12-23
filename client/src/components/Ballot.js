@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
 function Ballot() {
+  const [test, settest] = useState({});
+
   function whatever(e) {
     e.preventDefault();
     console.log(`pressed`);
   }
+
   return (
     <div className="Ballot">
       <h3>Create a ballot</h3>
