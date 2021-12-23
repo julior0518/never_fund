@@ -1,11 +1,12 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BASE_URL } from "../Globals";
 
 function UserForm(props) {
   const form = useRef()
   const [formType, setFormType] = useState({
-    type: "login"
+    type: "login",
+    userCheck: ""
   })
   const [user, setUser] = useState ({
     nameUser: "",
@@ -13,15 +14,28 @@ function UserForm(props) {
     passwordConfirm: ""
   })
   function handleChange (e){
-    console.log(user)
-    e.preventDefault();
     setUser({...user, [e.target.id]: e.target.value})
+
   }
 
   function login(){}
+
+
+  useEffect(()=>{async function userCheck () {
+    const res = await axios.get(`${BASE_URL}/user/${user.nameUser}`)
+    setFormType({...formType, userCheck:res.data.esteUsername[0].nameUser})
+  }
+  userCheck()
+},[user])
+  
+  console.log(formType)
+
   function signup(){
+    if (formType.userCheck === user.nameUser){
+      console.log(`this user exists`)
+    } else {
     axios.post(`${BASE_URL}/users`, user)
-    console.log(`created`)
+    console.log(`created`)}
   }
 
   let displayForm
