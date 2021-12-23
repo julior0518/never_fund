@@ -6,7 +6,8 @@ function UserForm(props) {
   const form = useRef()
   const [formType, setFormType] = useState({
     type: "login",
-    userCheck: ""
+    userCheck: "",
+    userCheckID: ""
   })
   const [user, setUser] = useState ({
     nameUser: "",
@@ -15,7 +16,7 @@ function UserForm(props) {
   })
   useEffect(()=>{async function userCheck () {
     const res = await axios.get(`${BASE_URL}/user/${user.nameUser}`)
-    setFormType({...formType, userCheck:res.data.esteUsername[0].nameUser})
+    setFormType({...formType, userCheck:res.data.esteUsername[0].nameUser, userCheckID: res.data.esteUsername[0]._id})
   }
   userCheck()
 },[user])
@@ -25,7 +26,14 @@ function UserForm(props) {
   }
 
 
-  function login(){}
+  function login(){
+    if ((user.password !== "") && (formType.userCheck === user.nameUser)){
+      console.log(`this user exists`)
+      props.setUserStatus({...props.userStatus , userForm:false, loginStatus:true, userID:formType.userCheckID})
+    } else {
+      alert("Username or password does not match any user in the database. Please check your info or create a new account")
+    }
+  }
 
 
 
@@ -36,9 +44,9 @@ function UserForm(props) {
     } else if ((user.password !== "") && (user.password === user.passwordConfirm)){
     const res = await axios.post(`${BASE_URL}/users`, user)
     props.setUserStatus({...props.userStatus , userForm:false, loginStatus:true, userID:res.data.esteUser._id})
-  } else {
+    } else {
     alert("Please check the passwords")
-  }
+    }
   }
 
   let displayForm
