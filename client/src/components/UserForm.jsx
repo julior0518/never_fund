@@ -28,18 +28,14 @@ function UserForm(props) {
 
   function login(){
     if ((user.password !== "") && (formType.userCheck === user.nameUser)){
-      console.log(`this user exists`)
       props.setUserStatus({...props.userStatus , userForm:false, loginStatus:true, userID:formType.userCheckID})
     } else {
       alert("Username or password does not match any user in the database. Please check your info or create a new account")
     }
   }
 
-
-
   async function signup(){
     if (formType.userCheck === user.nameUser){
-      console.log(`this user exists`)
       alert("This usernam is taken, please choose a new username")
     } else if ((user.password !== "") && (user.password === user.passwordConfirm)){
     const res = await axios.post(`${BASE_URL}/users`, user)

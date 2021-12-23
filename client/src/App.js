@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 import Profile from './components/Profile';
-import Taco from './components/Taco';
+import TicketCreate from './components/TicketCreate';
 import Foot from './components/Foot';
 import UserForm from './components/UserForm';
 import './App.css';
@@ -25,7 +25,7 @@ function App() {
       <Switch>
         <Route exact path="/" render={Landing} />
         <Route exact path="/profile" render={Profile} />
-        <Route exact path="/taco" render={Taco} />
+        <Route exact path="/ballots" render={TicketCreate} />
       </Switch>
       <Foot />
       {!userStatus.userForm ? null : (
