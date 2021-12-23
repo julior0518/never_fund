@@ -8,18 +8,29 @@ function UserForm(props) {
   })
 
   function login(){}
+  function signup(){}
   let displayForm
   if (formType.type === "login"){
-    displayForm = <div className="displayForm"   >
-      <input b placeholder="username" id="username" type="text" className="displayFormInput"></input>
+    displayForm = <div className="displayForm">
+      <h2>Log In</h2>
+      <input placeholder="username" id="username" type="text" className="displayFormInput"></input>
       <input placeholder="password" id="password" type="text" className="displayFormInput"></input>
       <button onClick={login}>submit</button>
-      <p className="toSignUp" onClick={()=>{}}>Don't have an account? Sign up</p>
+      <p className="toSignUp" onClick={()=>{setFormType({...formType, type:"signup"})}}>Don't have an account? Sign up</p>
     </div>
-  } else if (formType.type === "signup"){}
+  } else if (formType.type === "signup"){
+    displayForm = <div className="displayForm">
+    <h2>Create an account</h2>
+    <input placeholder="username" id="username" type="text" className="displayFormInput"></input>
+    <input placeholder="password" id="password" type="text" className="displayFormInput"></input>
+    <input placeholder="passwordConfirm" id="passwordConfirm" type="text" className="displayFormInput"></input>
+    <button onClick={login}>submit</button>
+    <p className="toSignUp" onClick={()=>{setFormType({...formType, type:"login"})}}>Already have an account? Log in</p>
+  </div>
+  }
+ 
 
   function closePop (e){
-    
     if(form.current === e.target){
     props.setUserStatus({...props.userStatus , userForm:false})}
   }
