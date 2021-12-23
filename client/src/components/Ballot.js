@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
 function Ballot() {
+  function whatever(e) {
+    e.preventDefault();
+    console.log(`pressed`);
+  }
   return (
     <div className="Ballot">
       <h3>Create a ballot</h3>
@@ -29,7 +33,7 @@ function Ballot() {
           className="displayFormInputD"
           onChange={console.log(3)}
         ></input>
-        <button>Create Ballot</button>
+        <button onClick={whatever}>Create Ballot</button>
       </form>
     </div>
   );
