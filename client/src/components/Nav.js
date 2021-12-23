@@ -18,8 +18,8 @@ function Nav(props) {
         <Link to="/profile" className="li">
           Profile
         </Link>
-        <Link to="/ballots" className="li">
-          Ballots
+        <Link to="/ballot" className="li">
+          Ballot
         </Link>
       </div>
     );

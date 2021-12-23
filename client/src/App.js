@@ -4,9 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 import Profile from './components/Profile';
-import TicketCreate from './components/TicketCreate';
 import Foot from './components/Foot';
 import UserForm from './components/UserForm';
+import Ballot from './components/Ballot';
+
 import './App.css';
 
 import { useState } from 'react';
@@ -25,7 +26,7 @@ function App() {
       <Switch>
         <Route exact path="/" render={Landing} />
         <Route exact path="/profile" render={Profile} />
-        <Route exact path="/ballots" render={TicketCreate} />
+        <Route exact path="/ballot" render={Ballot} />
       </Switch>
       <Foot />
       {!userStatus.userForm ? null : (

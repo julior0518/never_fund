@@ -1,35 +1,28 @@
-import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
-import { BASE_URL } from '../Globals';
+import React from 'react';
 
-function ticketCreate() {
-  function handleChange() {}
-
+function Ballot() {
   return (
-    <div className="TicketCreate">
+    <div className="Ballot">
       <h3>Create a ballot</h3>
       <p>
         Use this form to create a product that the community can vote and buy
       </p>
       <form className="displayFormBallot">
         <input
-          onChange={handleChange}
           placeholder="Product Title"
-          id="productTitle"
+          id="title"
           type="text"
           className="displayFormInput"
         ></input>
         <input
-          onChange={handleChange}
           placeholder="Contract Address"
-          id="productContract"
+          id="contract"
           type="text"
           className="displayFormInput"
         ></input>
         <input
-          onChange={handleChange}
           placeholder="Description"
-          id="productDescription"
+          id="description"
           type="text"
           className="displayFormInputD"
         ></input>
@@ -39,4 +32,4 @@ function ticketCreate() {
   );
 }
 
-export default ticketCreate;
+export default Ballot;
