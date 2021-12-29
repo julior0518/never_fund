@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const Ticket = new Schema(
   {
-    createdBy: [{ type: Schema.Types.ObjectId, ref: 'user' }],
     title: { type: String, required: true },
     contract: { type: String, required: true },
     description: { type: String, required: true },

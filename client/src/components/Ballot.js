@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 
 function Ballot() {
-  const [test, settest] = useState({});
-
-  function whatever(e) {
-    e.preventDefault();
-    console.log(`pressed`);
-  }
+  const [test, setTest] = useState({});
 
   return (
     <div className="Ballot">
@@ -36,7 +31,7 @@ function Ballot() {
           className="displayFormInputD"
           onChange={console.log(3)}
         ></input>
-        <button onClick={whatever}>Create Ballot</button>
+        <button>Create Ballot</button>
       </form>
     </div>
   );

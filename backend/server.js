@@ -5,8 +5,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 // require() imports and middleware here ^ ///////
 
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 3008;
 const app = express();
 
 app.use(bodyParser.json());

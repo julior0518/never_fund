@@ -26,6 +26,9 @@ function App() {
       <Switch>
         <Route exact path="/" render={Landing} />
         <Route exact path="/profile" render={Profile} />
+        {/* error is beacuse render is passed invoking a function but not as{' '}
+        {() => <Taco />} */}
+        {/* component instead of render is also a sollution but it will always unmount and mount  */}
         <Route exact path="/ballot" render={Ballot} />
       </Switch>
       <Foot />

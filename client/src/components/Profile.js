@@ -6,6 +6,7 @@ function Profile() {
   return (
     <div className="Profile">
       <p>Profile</p>
+      <h1>hola</h1>
     </div>
   );
 }
